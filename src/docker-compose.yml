@@ -1,0 +1,27 @@
+version: "3.1"
+
+services:
+  flask:
+    build: .
+    container_name: flask
+    command: gunicorn flask_service:"create_app()" -b 0.0.0.0:5000 --reload
+    restart: always
+    ports:
+      - 5001:5000
+    depends_on:
+      - postgres
+    volumes:
+      - .:/flask_test/src
+
+  postgres:
+    image: postgres
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: db
+      POSTGRES_PASSWORD: db
+    ports:
+      - 5432:5432
+  
+

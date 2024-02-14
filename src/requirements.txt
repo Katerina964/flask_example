@@ -1,0 +1,5 @@
+Flask
+alembic
+gunicorn
+sqlalchemy
+psycopg2-binary
