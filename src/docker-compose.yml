@@ -11,7 +11,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - .:/flask_test/src
+      - .:/flask_example/src
 
   postgres:
     image: postgres

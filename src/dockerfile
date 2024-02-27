@@ -1,5 +1,5 @@
 FROM python:3.9
-WORKDIR /flask_test/src
+WORKDIR /flask_example/src
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
-COPY . /flask_test/src
+COPY . /flask_example/src

@@ -23,11 +23,11 @@ def create_app(test_config=None):
     def shutdown_session(exception=None):
         db_session.remove()
 
-    @app.route('/hello')
+    @app.route('/')
     def hello():
-        u = User('admin', 'admin@localhost')
-        db_session.add(u)
-        db_session.commit()
+        # u = User('admin', 'admin@localhost')
+        # db_session.add(u)
+        # db_session.commit()
         return "<p>Hello, World WITH LOVE!</p>"
     
     return app
